@@ -1,34 +1,48 @@
 import React, {useState} from "react";
-import {Box, Button, FormControl, FormLabel, HStack, Input, chakra} from "@chakra-ui/react";
+import {Flex, Button, FormControl, FormLabel, HStack, Input, chakra} from "@chakra-ui/react";
 import {darken} from "@chakra-ui/theme-tools"
+import {useUser} from "../useUser";
+import {fetchUserById} from "../lib/data";
 
 const Search = () => {
-    const [user, setUser] = useState()
+    const [userId, setUserId] = useState("")
 
     const handleChange = e => {
-        setUser(e.target.value)
+        setUserId(e.target.value)
     }
 
+    const handleClick = async () => {
+        user.setUserId(userId)
+        user.setUserInfo(await fetchUserById(userId))
+    }
+
+    const user = useUser()
+
     return (
-        <Box>
+        <Flex>
             <FormControl>
-                <FormLabel htmlFor="user">Enter User</FormLabel>
                 <HStack>
                     <Input
                         type="text"
-                        value={user}
+                        value={userId}
                         onChange={handleChange}
                         focusBorderColor="accent"
                         borderColor="dark"
                     />
-                    <Button bg="accent" _hover={{
-                        bg: darken("accent", 20)
-                    }}>
+                    <Button bg="accent"
+                            _hover={{
+                                bg: darken("accent", 20)
+                            }}
+                            _active={{
+                                bg: darken("accent", 5)
+                            }}
+                            onClick={handleClick}
+                    >
                         <SearchIcon color={"white"}/>
                     </Button>
                 </HStack>
             </FormControl>
-        </Box>
+        </Flex>
     )
 }
 
