@@ -109,7 +109,7 @@ const CommitsTable = () => {
                                 <Button
                                     variant="outline"
                                     onClick={() => handlePageChange(currentPage + 1)}
-                                    disabled={currentPage === Math.ceil(commits.length / 5 - 1)}
+                                    disabled={commits.length < 6 ? true : currentPage === Math.ceil(commits.length / 5 )}
                                 >
                                     Next
                                 </Button>
