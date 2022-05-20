@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Flex, Button, FormControl, FormLabel, HStack, Input, chakra} from "@chakra-ui/react";
+import {Flex, Button, FormControl, HStack, Input, chakra} from "@chakra-ui/react";
 import {darken} from "@chakra-ui/theme-tools"
 import {useUser} from "../useUser";
 import {fetchUserById} from "../lib/data";

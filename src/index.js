@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {ChakraProvider} from '@chakra-ui/react'
 import {UserProvider} from "./useUser";

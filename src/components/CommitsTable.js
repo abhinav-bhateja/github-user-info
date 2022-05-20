@@ -1,11 +1,14 @@
 import {
-    Button, chakra,
+    Button,
+    chakra,
     Heading,
-    IconButton, Link,
+    IconButton,
+    Link,
     Table,
     TableContainer,
     Tbody,
-    Td, Text,
+    Td,
+    Text,
     Tfoot,
     Th,
     Thead,
@@ -15,8 +18,6 @@ import {
 import {FaExternalLinkAlt} from "react-icons/fa";
 import {useEffect, useState} from "react";
 import {useUser} from "../useUser";
-import {VscGitCommit} from "react-icons/vsc";
-import {fetchCommitsByRepo} from "../lib/data";
 
 const CommitsTable = () => {
     const {commits} = useUser();

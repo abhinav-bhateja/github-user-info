@@ -1,23 +1,10 @@
 import {
     Box,
-    Text,
     Container,
-    Flex,
-    Heading, IconButton,
-    Table,
-    TableContainer,
-    Tbody,
-    Td, Tfoot,
-    Th,
-    Thead, Tooltip,
-    Tr,
-    VStack, HStack, Button
+    Flex
 } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
-import Search from "./components/Search";
 import Card from "./components/Card";
-import {FaExternalLinkAlt} from "react-icons/fa";
-import {VscGitCommit} from "react-icons/vsc";
 import ReposTable from "./components/ReposTable";
 import CommitsTable from "./components/CommitsTable";
 
